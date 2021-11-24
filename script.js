@@ -19,6 +19,15 @@ function changeLiColor(evento) {
   evento.target.classList.add('selected');
 }
 
+function tarefaCompleta(evento) {
+  if (evento.target.classList.contains('completed') === true) {
+    evento.target.classList.remove('completed');
+  } else {
+    evento.target.classList.add('completed');
+  }
+}
+
+listaTarefas.addEventListener('dblclick', tarefaCompleta);
 listaTarefas.addEventListener('click', changeLiColor);
 botaoTarefas.addEventListener('click', adicionandoTarefas);
 
