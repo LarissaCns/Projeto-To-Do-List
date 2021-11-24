@@ -1,6 +1,7 @@
 const tarefasDigitadas = document.getElementById('texto-tarefa');
 const listaTarefas = document.getElementById('lista-tarefas');
 const botaoTarefas = document.getElementById('criar-tarefa');
+const botaoApagarTudo = document.getElementById('apaga-tudo');
 
 function adicionandoTarefas() {
   const tarefa = document.createElement('li');
@@ -27,6 +28,11 @@ function tarefaCompleta(evento) {
   }
 }
 
+function apagaTudo() {
+  listaTarefas.innerText = '';
+}
+
+botaoApagarTudo.addEventListener('click', apagaTudo);
 listaTarefas.addEventListener('dblclick', tarefaCompleta);
 listaTarefas.addEventListener('click', changeLiColor);
 botaoTarefas.addEventListener('click', adicionandoTarefas);
