@@ -2,6 +2,7 @@ const tarefasDigitadas = document.getElementById('texto-tarefa');
 const listaTarefas = document.getElementById('lista-tarefas');
 const botaoTarefas = document.getElementById('criar-tarefa');
 const botaoApagarTudo = document.getElementById('apaga-tudo');
+const botaoApagaCompletos = document.getElementById('remover-finalizados');
 
 function adicionandoTarefas() {
   const tarefa = document.createElement('li');
@@ -32,6 +33,14 @@ function apagaTudo() {
   listaTarefas.innerText = '';
 }
 
+function removeCompletos() {
+  const feitos = document.querySelectorAll('.completed');
+  for (let index = 0; index < feitos.length; index += 1) {
+    listaTarefas.removeChild(feitos[index]);
+  }
+}
+
+botaoApagaCompletos.addEventListener('click', removeCompletos);
 botaoApagarTudo.addEventListener('click', apagaTudo);
 listaTarefas.addEventListener('dblclick', tarefaCompleta);
 listaTarefas.addEventListener('click', changeLiColor);
