@@ -1,7 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
 .selected {
   background-color: grey;
 }
 
 .completed {
   text-decoration: line-through;
+}
+
+body {
+  background-color: rgb(233 , 236 , 239);
+  font-family: Montserrat, sans-serif;
+}
+
+h1 {
+  color: rgb(33 , 37 , 41);
+}
+
+h2 {
+  color: rgb(52 , 58 , 64);
+  display: inline-block;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: 900;
+}
+
+h3 {
+  color: rgb(73 , 80 , 87);
+  display: inline-block;
+}
+
+p {
+  color: rgb(108 , 117 , 125);
+  margin-bottom: 10px;
+}
+
+#main-content {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 80%;
+  height: 80%;
+  border-radius: 3px;
+  background-color: rgb(248 , 249 , 250);
+  padding: 40px;
+}
+
+#texto-tarefa {
+  border: 0;
+  background-color: rgb(206 , 212 , 218);
+  padding: 10px;
+  margin: 10px;
+  outline: 0;
+  width: 200px;
+}
+
+button {
+  border: 0;
+  padding: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  color: rgb(222 , 226 , 230);
+  text-align: center;
+  background-color: rgb(52 , 58 , 64);
+}
+
+button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+ol {
+  padding: 20px;
+}
+
+ol li {
+  padding: 5px;
 }
