@@ -4,6 +4,7 @@ const botaoTarefas = document.getElementById('criar-tarefa');
 const botaoApagarTudo = document.getElementById('apaga-tudo');
 const botaoApagaFinalizados = document.getElementById('remover-finalizados');
 const botaoApagaCompletos = document.getElementById('remover-selecionado');
+const botaoSalvar = document.getElementById('salvar-tarefas');
 
 function adicionandoTarefas() {
   const tarefa = document.createElement('li');
@@ -48,11 +49,22 @@ function apagaSelecionado() {
   }
 }
 
+function salvarLista() {
+  localStorage.clear();
+  localStorage.setItem('lista', listaTarefas.innerHTML);
+}
+
+const listaSalva = localStorage.getItem('lista');
+if (listaSalva) {
+  listaTarefas.innerHTML = listaSalva;
+}
+
 botaoApagaCompletos.addEventListener('click', apagaSelecionado);
 botaoApagaFinalizados.addEventListener('click', removeCompletos);
 botaoApagarTudo.addEventListener('click', apagaTudo);
 listaTarefas.addEventListener('dblclick', tarefaCompleta);
 listaTarefas.addEventListener('click', changeLiColor);
 botaoTarefas.addEventListener('click', adicionandoTarefas);
+botaoSalvar.addEventListener('click', salvarLista);
 
 window.onload = function init() {};
